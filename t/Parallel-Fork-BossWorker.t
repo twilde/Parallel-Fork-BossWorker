@@ -1,9 +1,10 @@
 use strict;
 use warnings;
-use Test::More tests => 18;
+use Test::More tests => 20;
 BEGIN { use_ok('Parallel::Fork::BossWorker') };
 require_ok('Parallel::Fork::BossWorker');
 
+# Each entry in @testdata creates two additional tests
 my @testdata = (
 	{ value => 'ok' },
 	{
@@ -21,6 +22,14 @@ my @testdata = (
 	{ data => 'here' },
 	{ lots => 'of data' },
 	{ need => 'testing' },
+	{
+		sleepy => 'thread',
+		sleep => 2,
+		iam => 'tired',
+		all => 'the time',
+		are => { you => ['there', 'at', 'all'] },
+		question => '?',
+	},
 );
 
 # How many results did we get back?
@@ -28,6 +37,7 @@ my $results_received = 0;
 
 # Create new BossWorker instance
 my $bw = new Parallel::Fork::BossWorker(
+	worker_count => 5,
 	work_handler => sub {
 			my $work = shift;
 			my $data = $work->{data};
