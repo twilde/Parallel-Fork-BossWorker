@@ -13,7 +13,7 @@ use IO::Select;
 
 # Perl module variables
 our @ISA = qw();
-our $VERSION = '0.04';
+our $VERSION = '0.05_02';
 
 sub new {
     my $class = shift;
@@ -25,9 +25,10 @@ sub new {
         global_timeout => $values{global_timeout} || 0,      # Number of seconds before the worker terminates the job, 0 for unlimited
         work_handler   => $values{work_handler},             # Handler which will process the data from the boss
         work_queue     => [],
-        msg_delimiter  => "\0\0\0",
+        msg_delimiter  => $values{msg_delimiter} || "\0\0\0",
         select         => IO::Select->new(),
     };
+    $self->{msg_delimiter_length} = length($self->{msg_delimiter});
     bless $self, ref($class) || $class;
 
     # The work handler is required
@@ -202,8 +203,15 @@ sub receive(\*) {
     my $fh = shift();
     
     # Get a value from the file handle
-    local $/ = $self->{msg_delimiter};
-    my $value = <$fh>;
+    my $value;
+    my $char;
+    while (read($fh, $char, 1)) {
+        $value .= $char;
+        if (substr($value, -($self->{msg_delimiter_length})) eq $self->{msg_delimiter}) {
+            $value = substr($value, 0, -($self->{msg_delimiter_length}));
+            last;
+        }
+    }
     
     # Deserialize the data
     no strict;
@@ -211,6 +219,7 @@ sub receive(\*) {
     my $data = eval($value);
 
     if ($@) {
+        print STDERR "Value: '$value'\n" if $ENV{PFBW_DEBUG};
         confess("Failed to deserialize data: $@");
     }
 
