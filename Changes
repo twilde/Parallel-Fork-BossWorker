@@ -1,6 +1,10 @@
 Revision history for Perl module Parallel::Fork::BossWorker.
 
-0.04  ???
+0.05  04 NOV 2011
+	- Improved test suite
+	- Deserialization improvement for large data
+
+0.04  16 July 2011
 	- Add Data::Dumper dependency to Makefile.PL
 	- Fix for RT#63125 - corrupted data on pipe from workers
           Now uses an IO::Select object and multiple pipes to avoid
@@ -21,4 +25,4 @@ Revision history for Perl module Parallel::Fork::BossWorker.
 
 0.01  Thu Apr 26 15:45:23 2007
 	- original version; created by h2xs 1.23 with options
-		-AX --skip-exporter --use-new-tests -n Parallel::Fork::BossWorker
+	  -AX --skip-exporter --use-new-tests -n Parallel::Fork::BossWorker
