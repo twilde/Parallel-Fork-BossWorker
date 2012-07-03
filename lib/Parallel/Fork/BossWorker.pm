@@ -188,7 +188,7 @@ sub worker(\*) {
         
         # Warn on errors
         if ($@) {
-            croak("Worker $$ error: $@");
+            carp("Worker $$ error: $@");
         }
         
         # Send the result to the server
