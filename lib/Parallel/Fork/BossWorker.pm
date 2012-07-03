@@ -13,7 +13,7 @@ use IO::Select;
 
 # Perl module variables
 our @ISA = qw();
-our $VERSION = '0.05';
+our $VERSION = '0.05_01';
 
 sub new {
     my $class = shift;
@@ -250,7 +250,7 @@ __END__
 
 =head1 NAME
 
-Parallel::Fork::BossWorker - Perl extension for easiliy creating forking queue processing applications.
+Parallel::Fork::BossWorker - Perl extension for easily creating forking queue processing applications.
 
 =head1 SYNOPSIS
 
