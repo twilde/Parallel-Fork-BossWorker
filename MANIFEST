@@ -3,5 +3,7 @@ lib/Parallel/Fork/BossWorker.pm
 Makefile.PL
 MANIFEST
 README
+t/00-load.t
 t/Parallel-Fork-BossWorker.t
+t/quiet.t
 META.yml                                 Module meta-data (added by MakeMaker)
