@@ -15,6 +15,12 @@ This process repeats until the work queue is empty.
 See the POD documentation in BossWorker.pm for details on how to use
 P:F:BW.
 
+This module's source code and revision history are available on GitHub,
+and contributions are gladly welcomed!  Feel free to fork us and submit pull
+requests, the repository can be found at:
+
+	https://github.com/twilde/Parallel-Fork-BossWorker
+
 INSTALLATION
 
 To install this module type the following:
@@ -28,7 +34,7 @@ DEPENDENCIES
 
 This module requires these other modules and libraries:
 
-  Data::CGIForm
+  Data::Dumper
 
 COPYRIGHT AND LICENCE
 

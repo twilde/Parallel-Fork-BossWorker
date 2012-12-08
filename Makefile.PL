@@ -12,4 +12,9 @@ WriteMakefile(
     ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
       (ABSTRACT_FROM  => 'lib/Parallel/Fork/BossWorker.pm', # retrieve abstract from module
        AUTHOR         => 'Jeff Rodriguez, Tim Wilde') : ()),
+    META_MERGE => {
+        resources => {
+            repository => 'https://github.com/twilde/Parallel-Fork-BossWorker',
+        },
+    },
 );
