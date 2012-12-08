@@ -36,8 +36,8 @@ Copyright (c) 2007 by Jeff Rodriguez
 
 Portions Copyright (c) 2011 Tim Wilde
 
+Portions Copyright (c) 2012 Google, Inc.
+
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.8.8 or,
 at your option, any later version of Perl 5 you may have available.
-
-$Id: README 7 2011-02-15 13:20:54Z twilde $

@@ -1,5 +1,9 @@
 Revision history for Perl module Parallel::Fork::BossWorker.
 
+0.06  ?? DEC 2012
+	- Cleanup release
+	- Copyright and author updates
+
 0.05  04 NOV 2011
 	- Improved test suite
 	- Deserialization improvement for large data

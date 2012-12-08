@@ -379,19 +379,24 @@ IO::Select
 
 If we knew about any bugs, we would have fixed them. :)
 
+Please report bugs to the CPAN RT instance at
+L<https://rt.cpan.org/Dist/Display.html?Queue=Parallel-Fork-BossWorker>
+
 =head1 SEE ALSO
 
 =head1 AUTHOR
 
-Jeff Rodriguez, E<lt>jeff@jeffrodriguez.comE<gt>
+Jeff Rodriguez, <F<jeff@jeffrodriguez.com>>
 
-Tim Wilde, E<lt>twilde@cpan.orgE<gt>
+Tim Wilde, <F<twilde@cpan.org>>
 
 =head1 COPYRIGHT AND LICENSE
 
 Copyright (c) 2007, Jeff Rodriguez
 
 Portions Copyright (c) 2011, Tim Wilde
+
+Portions Copyright (c) 2012, Google, Inc.
 
 All rights reserved.
 
