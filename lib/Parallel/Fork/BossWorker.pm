@@ -13,7 +13,7 @@ use IO::Select;
 
 # Perl module variables
 our @ISA = qw();
-our $VERSION = '0.05_01';
+our $VERSION = '0.06';
 
 sub new {
     my $class = shift;

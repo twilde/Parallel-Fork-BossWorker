@@ -1,6 +1,6 @@
 Revision history for Perl module Parallel::Fork::BossWorker.
 
-0.06  ?? DEC 2012
+0.06  13 DEC 2012
 	- Cleanup release
 	- Copyright and author updates
 	- Add GitHub repo link in metadata & README
